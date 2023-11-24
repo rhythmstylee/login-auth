@@ -20,3 +20,18 @@ if (firebaseConfig) {
     // TODO: Tambahkan logika otentikasi di sini
     // Misalnya, periksa apakah pengguna sudah masuk atau belum.
 }
+// Pastikan Firebase sudah diinisialisasi
+if (firebaseConfig) {
+    // TODO: Tambahkan logika otentikasi di sini
+    // Misalnya, periksa apakah pengguna sudah masuk atau belum.
+    firebase.auth().onAuthStateChanged(function (user) {
+        if (user) {
+            // Pengguna sudah masuk
+            console.log("User is signed in:", user);
+        } else {
+            // Pengguna belum masuk
+            console.log("User is signed out");
+        }
+    });
+}
+
